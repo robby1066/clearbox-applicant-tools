@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>When Can I Apply For U.S. Citizenship? - Clearbox Legal</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="">
+        <div id="restart">
+            <a href="#start" class="button secondary">Start Over</a>
+        </div>
+        <div id="wrapper">
+            <div id="canvas" style="--canvas-top: 0; --canvas-left: 0;">
+                <div id="start" class="card">
+                    <div class="logo">
+                        <img src="images/clearbox-logo.svg" alt="Clearbox Legal">
+                    </div>
+                    <h1><em>When Can I Apply For U.S. Citizenship?</em></h1>
+                    <p>Many things can affect when you can apply for citizenship.</p>
+                    <p>Use this guide to figure out if you are eligible.</p>
+                    <a href="#marriage" class="button large">Get Started</a>
+                </div>
+                
+                <div class="connector" style="--connector-margin-bottom: -7rem;">
+                    <picture>
+                        <source srcset="images/connector-marriage-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-marriage-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+                
+                <div id="marriage" class="card">
+                    <h2 data-counter="1" style="--counter-circle-top: -0.5rem;">Are you married to a U.S. citizen?</h2>
+                    <img class="card-image"src="images/wedding-rings.svg" alt="wedding ring">
+                    <div class="boolean-group" style="--first-child-top: 0; --second-child-top: -0.5rem;">
+                        <a href="#marriage-info" class="button boolean" data-provision="marriage">Yes</a>
+                        <a href="#marriage-info" class="button boolean" data-provision="general">No</a>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <picture>
+                        <source srcset="images/connector-marriage-info-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-marriage-info-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="marriage-info"class="card">
+                    <div class="slanted">
+                        <p>If you are married to a U.S. Citizen, it shortens<br class="desktop-only"/> the time you need to have a green Card.</p>
+                        <a href="#green-card" class="button secondary">Continue</a>
+                    </div>
+                </div>
+
+                <div class="connector" style="--connector-margin-top: 0;">
+                    <picture>
+                        <source srcset="images/connector-green-card-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-green-card-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="green-card" class="card">
+                    <h2 data-counter="2" style="--counter-circle-top: -1.5rem; --counter-circle-left: -1.8rem;">Do you have a green card?</h2>
+                    <img class="card-image" src="images/green-card-1.svg" alt="green card">
+                    <div class="boolean-group" style="--second-child-top: -0.5rem;"">
+                        <a href="#resident-date" class="button boolean">Yes</a>
+                        <a href="#green-card-ineligible" class="button boolean">No</a>
+                    </div>
+                    <picture class="ineligible-connector">
+                        <source srcset="images/connector-greencard-ineligible.svg" media="(min-width: 775px)">
+                        <img src="images/connector-ineligible-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="green-card-ineligible" class="card endpoint-ineligible">
+                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <h2>You should wait to apply.</h2>
+                    <div class="endpoint-content">
+                        <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply for U.S. citizenship.</p>
+                        <a href="#start" class="button secondary">Start Over</a>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <picture>
+                        <source srcset="images/connector-resident-date-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-resident-date-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="resident-date" class="card">
+                    <h2 data-counter="3" style="--counter-circle-top: -0.75rem; --counter-circle-left: -1.75rem;">What is the <em>"Resident Since"</em> date on your green card?</h2>
+                    
+                    <img class="card-image" src="images/green-card-2.svg" alt="green card">
+                    <div id="resident-since-input">
+                        <div class="form-item">
+                            <label for="resident-since-date">Resident Since Date</label>
+                            <input type="date" id="resident-since-date">
+                        </div>
+                        <a href="#resident-since-info" class="button disabled">Continue</a>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <picture>
+                        <source srcset="images/connector-resident-since-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-resident-since-info-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="resident-since-info" class="card">
+                    <h2 id="resident-since-header">The date you entered is <span id="resident-since-date-display">0.0</span> years ago&hellip;</h2>
+                    <div>
+                        <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply.</p>
+                        <div id="resident-since-button-container">
+                            <a href="#consider-travel" class="button eligible">Continue</a>
+                            <a href="#resident-since-ineligible" class="button ineligible">Continue</a>
+                        </div>
+                    </div>
+                    <picture class="ineligible-connector">
+                        <source srcset="images/connector-resident-since-ineligible.svg" media="(min-width: 775px)">
+                        <img src="images/connector-ineligible-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="resident-since-ineligible" class="card endpoint-ineligible">
+                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <h2>You should wait to apply.</h2>
+                    <div class="endpoint-content">
+                        <p>You will become eligible to apply for U.S. citizenship on <span id="eligiblity-date"></span>.</p>
+                        <a href="#start" class="button secondary">Start Over</a>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <picture>
+                        <source srcset="images/connector-consider-travel-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-consider-travel-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="consider-travel" class="card">
+                    <div class="slanted">
+                        <p>Next, think about the trips you've taken outside the U.S. in the last <span class="time-period"></span> years</p>
+                        <a href="#physical-presence" class="button secondary">Continue</a>
+                    </div>
+                </div>
+
+                <div class="connector" style="--connector-margin-bottom: -6rem;">
+                    <picture>
+                        <source srcset="images/connector-physical-presence-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-physical-presence-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="physical-presence" class="card">
+                    <h2 data-counter="4" style="--counter-circle-top: -1.25rem; --counter-circle-left: -0.75rem;">Add <em>all the days</em> you have been<br class="desktop-only"/> outside of the U.S. in the last <span class="time-period">5</span> years. <br/>Is it more than <span id="physical-presence-days">913</span> days?</h2>
+                    <img class="card-image" src="images/world-plane.svg" alt="world plane">
+                    <div class="boolean-group">
+                        <a href="#continuous-residence" class="button boolean">No</a>
+                        <a href="#physical-presence-ineligible" class="button boolean">Yes</a>
+                    </div>
+                    <picture class="ineligible-connector">
+                        <source srcset="images/connector-physical-presence-ineligible.svg" media="(min-width: 775px)">
+                        <img src="images/connector-ineligible-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+                <div id="physical-presence-ineligible" class="card endpoint-ineligible">
+                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <h2>You should probably wait to apply.</h2>
+                    <div class="endpoint-content">
+                        <p>When you apply, you will need to have been present in the U.S. for at least half of the previous <span class="time-period">5</span> years.</p>
+                        <a href="#start" class="button secondary">Start Over</a>
+                    </div>
+                </div>
+
+                <div class="connector" style="--connector-margin-top: -4rem;">
+                    <picture>
+                        <source srcset="images/connector-continuous-residence-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-continuous-residence-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="continuous-residence" class="card">
+                    <h2 data-counter="5" style="--counter-circle-top: -1rem; --counter-circle-left: -0.25rem;">In the last <span class="time-period">5</span> years, has <em>any single trip</em><br class="desktop-only"/> outside the U.S. been longer than 6 months?</h2>
+                    <div class="boolean-group">
+                        <a href="#endpoint-success" class="button boolean">No</a>
+                        <a href="#continuous-residence-ineligible" class="button boolean">Yes</a>
+                    </div>
+                    <picture class="ineligible-connector">
+                        <source srcset="images/connector-continuous-residence-ineligible.svg" media="(min-width: 775px)">
+                        <img src="images/connector-ineligible-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+                <div id="continuous-residence-ineligible" class="card endpoint-ineligible">
+                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <h2>You should probably wait to apply.</h2>
+                    <div class="endpoint-content">
+                        <p>Trips longer than 6 months can cause problems when you apply for U.S. citizenship.</p>
+                        <a href="#start" class="button">Start Over</a>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <picture>
+                        <source srcset="images/connector-endpoint-success-desktop.svg" media="(min-width: 775px)">
+                        <img src="images/connector-endpoint-success-mobile.svg" alt="connector">
+                    </picture>
+                </div>
+
+                <div id="endpoint-success" class="card endpoint">
+                    <img class="card-image" src="images/success-check.svg" alt="success check">
+                    <div class="endpoint-content">
+                        <h2>Good news!<br/>You can apply for U.S. citizenship!</h2>
+                        <p>When you're ready, we'd love to help you with your application!</p>
+                        <p><a href="https://www.clearboxlegal.com" class="button">Learn About Clearbox</a></p>
+                        <p><a href="#start" class="button secondary">Start Over</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
