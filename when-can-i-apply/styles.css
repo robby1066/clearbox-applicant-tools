@@ -178,6 +178,13 @@ p em, h2 em {
     color: var(--color-button-text);
     text-decoration: none;
     border-radius: 3rem;
+    box-shadow: 0 0 0 0 var(--white);
+    box-sizing: border-box;
+    transition: box-shadow 0.4s ease-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 0 8px var(--white);
 }
 
 .button.boolean {

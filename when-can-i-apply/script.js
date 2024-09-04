@@ -23,6 +23,10 @@ class NavigationManager {
                 this.navigateTo(targetId, event);
             }
         });
+        window.addEventListener('resize', () => {
+            console.log(this.canvas.dataset.currentStep);
+            this.navigateTo(this.canvas.dataset.currentStep);
+        });
     }
 
     navigateTo(targetId, event) {
@@ -31,6 +35,7 @@ class NavigationManager {
             const shouldContinue = this.performAdditionalProcessing(targetId, event);
             if (shouldContinue) {
                 this.scrollToElement(targetElement);
+                this.canvas.dataset.currentStep = targetId;
             }
         }
     }
