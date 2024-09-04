@@ -297,7 +297,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
 
     H1 em {
         display: inline-block;
-        background-image: url("images/marker-underline.svg");
+        background-image: url("./images/marker-underline.svg");
         padding: 0 1rem;
     }
 
@@ -326,7 +326,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
         content: "";
         height: 4.75rem;
         width: 4.75rem;
-        background-image: url("images/screened-circle.svg");
+        background-image: url("./images/screened-circle.svg");
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -490,7 +490,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
             content: "";
             height: 170px;
             width: 172px;
-            background-image: url("images/hourglass.svg");
+            background-image: url("./images/hourglass.svg");
             background-size: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -504,7 +504,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
             content: "";
             height: 17rem;
             width: 17rem;
-            background-image: url("images/screened-circle.svg");
+            background-image: url("./images/screened-circle.svg");
             background-size: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -757,7 +757,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
         content: "";
         height: 17rem;
         width: 17rem;
-        background-image: url("images/screened-circle.svg");
+        background-image: url("./images/screened-circle.svg");
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
