@@ -1,2 +1,2 @@
 # clearbox-applicant-tools
-Static directory of tools for naturalization applicants
+A collection of tools for naturalization applicants
