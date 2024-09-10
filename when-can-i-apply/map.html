@@ -40,6 +40,22 @@
         <link rel="stylesheet" href="styles.css">
 
         <script defer data-domain="clearboxlegal.com" src="https://plausible.io/js/script.js"></script>
+
+        <script>
+            (function (s, e, n, d, er) {
+              s['Sender'] = er;
+              s[er] = s[er] || function () {
+                (s[er].q = s[er].q || []).push(arguments)
+              }, s[er].l = 1 * new Date();
+              var a = e.createElement(n),
+                  m = e.getElementsByTagName(n)[0];
+              a.async = 1;
+              a.src = d;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+            sender('8ebd1ca95b3027')
+          </script>
+
     </head>
     <body class="">
         <div id="restart">
@@ -52,8 +68,8 @@
                         <img src="images/clearbox-logo.svg" alt="Clearbox Legal">
                     </div>
                     <h1><em>When Can I Apply For U.S. Citizenship?</em></h1>
-                    <p>Many things can affect when you can apply for citizenship.</p>
-                    <p>Use this guide to figure out if you are eligible.</p>
+                    <p>Many things affect when you can become a citizen.</p>
+                    <p>Use this guide to figure out if you are eligible today.</p>
                     <a href="#marriage" class="button large">Get Started</a>
                 </div>
                 
@@ -111,8 +127,8 @@
                     <img class="card-image" src="images/halt-icon.svg" alt="">
                     <h2>You should wait to apply.</h2>
                     <div class="endpoint-content">
-                        <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply for U.S. citizenship.</p>
-                        <a href="#start" class="button secondary">Start Over</a>
+                        <p>You must have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply for U.S. citizenship.</p>
+                        <a href="#start" class="button secondary cta-trigger">Get More Tips About Citizenship</a>
                     </div>
                 </div>
 
@@ -148,7 +164,7 @@
                     <div>
                         <p>To be eligible for citizenship, you need to have a green card for <em>at least <span class="time-period">5</span> years</em>.</p>
                         <!-- <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you are eligible.</p> -->
-                        <p class="fine-print show-for-early-filing-period">(but you are <em>allowed to file</em> within 90 days of your eligibility date.)</p>
+                        <p class="fine-print show-for-early-filing-period">(but you are <em>allowed to file</em> up to 90 days before your eligibility date.)</p>
                         <div id="resident-since-button-container">
                             <a href="#consider-travel" class="button eligible">Continue</a>
                             <a href="#resident-since-ineligible" class="button ineligible">Continue</a>
@@ -165,7 +181,7 @@
                     <h2>You should wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>You will become eligible to apply for U.S. citizenship on <span id="eligiblity-date"></span>.</p>
-                        <a href="#start" class="button secondary">Start Over</a>
+                        <a href="#start" class="button secondary cta-trigger">Get More Tips About Citizenship</a>
                     </div>
                 </div>
 
@@ -213,7 +229,7 @@
                     <h2>You should probably wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>When you apply, you will need to have been present in the U.S. for at least half of the previous <span class="time-period">5</span> years.</p>
-                        <a href="#start" class="button secondary">Start Over</a>
+                        <a href="#start" class="button secondary cta-trigger">Get More Tips About Citizenship</a>
                     </div>
                 </div>
 
@@ -228,7 +244,7 @@
                     <h2 data-counter="5" style="--counter-circle-top: -1rem; --counter-circle-left: -0.25rem;">
                         <span class="hide-for-early-filing-period">In the last <span class="time-period">5</span> years,</span> 
                         <span class="show-for-early-filing-period">Since <span class="resident-since-date-formatted"></span>,</span>
-                        has <em>any single trip</em><br class="desktop-only"/> outside the U.S. been longer than 6 months?</h2>
+                        has <em>any single trip</em><br class="desktop-only"/> outside the U.S. been <em>longer</em> than 6 months?</h2>
                     <div class="boolean-group">
                         <a href="#endpoint-success" class="button boolean">No</a>
                         <a href="#continuous-residence-ineligible" class="button boolean">Yes</a>
@@ -243,7 +259,7 @@
                     <h2>You should probably wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>Trips longer than 6 months can cause problems when you apply for U.S. citizenship.</p>
-                        <a href="#start" class="button">Start Over</a>
+                        <a href="#start" class="button secondary cta-trigger">Get More Tips About Citizenship</a>
                     </div>
                 </div>
 

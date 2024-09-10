@@ -62,6 +62,8 @@ class NavigationManager {
             case 'marriage-info':
                 if (event && event.target.getAttribute('data-provision') === 'marriage') {
                     this.setProvision('marriage');
+                } else if (event && event.target.getAttribute('data-provision') === 'general') {
+                    this.setProvision('general');
                 }
                 break;
             case 'resident-since-info':
