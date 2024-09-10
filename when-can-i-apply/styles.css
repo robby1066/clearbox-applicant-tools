@@ -137,19 +137,21 @@ H1 em {
 H2 {
     letter-spacing: 0.02em;
     rotate: -3deg;
+    line-height: 111%;
 }
 
 SPAN#resident-since-date-display {
     font-size: 6rem;
     display: block;
-    margin: 1rem auto -1rem;
+    margin: 1.5rem auto -1rem;
     color: var(--color-resident-since-date-display);
 }
 
 p {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     line-height: 130%;
     margin: 0 0 1rem 0;
+    letter-spacing: 0.02em;
 }
 
 p em, h2 em {
@@ -284,6 +286,22 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
     opacity: 0;
 }
 
+#canvas .show-for-early-filing-period {
+    display: none;
+}
+
+#canvas.within-early-filing-period .show-for-early-filing-period {
+    display: unset;
+}
+
+#canvas.within-early-filing-period .hide-for-early-filing-period {
+    display: none;
+}
+
+.resident-since-date-formatted {
+    text-wrap: nowrap;
+}
+
 /* Desktop styles */
 @media (min-width: 775px) { 
     :root {
@@ -345,6 +363,10 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
     }
 
     p {
+        font-size: 2.75rem;
+    }
+
+    p.fine-print {
         font-size: 2.25rem;
     }
 
@@ -387,6 +409,14 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
         text-align: center;
     }
 
+    #start P + A.button {
+        margin-top: 1rem;
+    }
+
+    .centered {
+        text-align: center;
+    }
+
     #marriage {
         /* Specific styles for #marriage */
         display: grid;
@@ -410,11 +440,12 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
 
     /* LAYOUTS FOR EACH BLOCK */
     #marriage-info div.slanted {
-        margin: 3rem 0 0 7rem;
+        margin: 3rem 0 0 0;
+        text-align: center;
     }
     
     #marriage-info div.slanted A.button {
-        margin-left: 10rem;
+        margin-right: 6rem;
     }
 
     #green-card {
@@ -536,15 +567,16 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
     #resident-since-info picture.ineligible-connector {
         position: absolute;
         left: calc(var(--card-width) - 10rem);
-        top: 11rem;
+        bottom: -18rem;
     }
 
     #consider-travel DIV.slanted {
-        margin: 2rem 8rem;
+        margin: 2rem 10rem;
+        text-align: center;
     }
 
     #consider-travel DIV.slanted A.button {
-        margin-left: 8rem;
+        margin-right: 7rem;
     }
 
     #physical-presence {
@@ -578,7 +610,7 @@ DIV#resident-since-info.ineligible picture.ineligible-connector {
     #physical-presence picture.ineligible-connector {
         position: absolute;
         left: calc(var(--card-width) - 15rem);
-        top: 15rem;
+        bottom: -16rem;
     }
     #physical-presence picture.ineligible-connector img {
         width: auto;

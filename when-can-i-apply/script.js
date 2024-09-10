@@ -97,17 +97,26 @@ class NavigationManager {
     updateResidentSinceInfo() {
         const dateInput = document.getElementById('resident-since-date');
         const dateDisplay = document.getElementById('resident-since-date-display');
+        const residentSinceDateFormatted = document.querySelectorAll('.resident-since-date-formatted');
         const residentSinceCard = document.getElementById('resident-since-info');
         const selectedDate = new Date(dateInput.value);
         const today = new Date();
         const eligiblityDate = new Date(selectedDate.getFullYear() + this.provision_years, selectedDate.getMonth(), selectedDate.getDate());
         const eligiblityDateDisplay = document.getElementById('eligiblity-date');
         const yearsDiff = (today - selectedDate) / (365 * 24 * 60 * 60 * 1000);
+
         dateDisplay.textContent = yearsDiff.toFixed(1);
-        if (yearsDiff < this.provision_years) {
+        if (yearsDiff < this.provision_years && !this.isWithinEarlyFilingPeriod()) {
             residentSinceCard.classList.add('ineligible');
+            this.canvas.classList.remove('within-early-filing-period');
             eligiblityDateDisplay.textContent = eligiblityDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
         } else {
+            if (this.isWithinEarlyFilingPeriod()) {
+                residentSinceDateFormatted.forEach(el => el.textContent = selectedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
+                this.canvas.classList.add('within-early-filing-period');
+            } else {
+                this.canvas.classList.remove('within-early-filing-period');
+            }
             residentSinceCard.classList.remove('ineligible');
         }
     }
@@ -148,6 +157,29 @@ class NavigationManager {
             const bottomMargin = Math.max(0, (viewportHeight - cardHeight) / 2);
             lastCard.style.marginBottom = `${bottomMargin}px`;
         }
+    }
+
+    isWithinEarlyFilingPeriod() {
+        const residentDateValue = document.getElementById('resident-since-date').value; 
+        if (!residentDateValue) {
+            return false;
+        }
+        const residentSinceDate = new Date(residentDateValue);
+        const provisionEligibilityDate = new Date(residentSinceDate.getFullYear() + this.provision_years, residentSinceDate.getMonth(), residentSinceDate.getDate());
+
+        const today = new Date();
+        
+        // Calculate the difference in milliseconds
+        const differenceInMs = provisionEligibilityDate -today;
+        
+        // Convert milliseconds to days
+        const differenceInDays = Math.ceil(differenceInMs / (1000 * 60 * 60 * 24));
+        
+        if (differenceInDays <= 90 && differenceInDays > 0) {
+            return true;
+        }
+
+        return false;
     }
 }
 

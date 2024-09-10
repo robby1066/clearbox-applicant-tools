@@ -82,7 +82,7 @@
 
                 <div id="marriage-info"class="card">
                     <div class="slanted">
-                        <p>If you are married to a U.S. Citizen, it shortens<br class="desktop-only"/> the time you need to have a green Card.</p>
+                        <p class="centered">If you are married to a U.S. Citizen, it shortens<br class="desktop-only"/> the time you need to have a green card&hellip;</p>
                         <a href="#green-card" class="button secondary">Continue</a>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                 </div>
 
                 <div id="green-card-ineligible" class="card endpoint-ineligible">
-                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <img class="card-image" src="images/halt-icon.svg" alt="">
                     <h2>You should wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply for U.S. citizenship.</p>
@@ -146,7 +146,9 @@
                 <div id="resident-since-info" class="card">
                     <h2 id="resident-since-header">The date you entered is <span id="resident-since-date-display">0.0</span> years ago&hellip;</h2>
                     <div>
-                        <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you can apply.</p>
+                        <p>To be eligible for citizenship, you need to have a green card for <em>at least <span class="time-period">5</span> years</em>.</p>
+                        <!-- <p>You need to have a green card for <em>at least <span class="time-period">5</span> years</em> before you are eligible.</p> -->
+                        <p class="fine-print show-for-early-filing-period">(but you are <em>allowed to file</em> within 90 days of your eligibility date.)</p>
                         <div id="resident-since-button-container">
                             <a href="#consider-travel" class="button eligible">Continue</a>
                             <a href="#resident-since-ineligible" class="button ineligible">Continue</a>
@@ -159,7 +161,7 @@
                 </div>
 
                 <div id="resident-since-ineligible" class="card endpoint-ineligible">
-                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <img class="card-image" src="images/halt-icon.svg" alt="">
                     <h2>You should wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>You will become eligible to apply for U.S. citizenship on <span id="eligiblity-date"></span>.</p>
@@ -176,7 +178,10 @@
 
                 <div id="consider-travel" class="card">
                     <div class="slanted">
-                        <p>Next, think about the trips you've taken outside the U.S. in the last <span class="time-period"></span> years</p>
+                        <p>Next, think about the trips you've taken outside the U.S. 
+                            <span class="hide-for-early-filing-period">in the last <span class="time-period"></span> years&hellip;</span>
+                            <span class="show-for-early-filing-period">since <span class="resident-since-date-formatted"></span>&hellip;</span></p>
+                        </p>
                         <a href="#physical-presence" class="button secondary">Continue</a>
                     </div>
                 </div>
@@ -189,7 +194,10 @@
                 </div>
 
                 <div id="physical-presence" class="card">
-                    <h2 data-counter="4" style="--counter-circle-top: -1.25rem; --counter-circle-left: -0.75rem;">Add <em>all the days</em> you have been<br class="desktop-only"/> outside of the U.S. in the last <span class="time-period">5</span> years. <br/>Is it more than <span id="physical-presence-days">913</span> days?</h2>
+                    <h2 data-counter="4" style="--counter-circle-top: -1.25rem; --counter-circle-left: -0.75rem;">Add <em>all the days</em> you've been<br class="desktop-only"/> outside of the U.S. 
+                        <span class="hide-for-early-filing-period">in the last <span class="time-period">5</span> years.</span> 
+                        <span class="show-for-early-filing-period">since <span class="resident-since-date-formatted"></span>.</span>
+                        <br/>Is it <em>more</em> than <span id="physical-presence-days">913</span> days?</h2>
                     <img class="card-image" src="images/world-plane.svg" alt="world plane">
                     <div class="boolean-group">
                         <a href="#continuous-residence" class="button boolean">No</a>
@@ -201,7 +209,7 @@
                     </picture>
                 </div>
                 <div id="physical-presence-ineligible" class="card endpoint-ineligible">
-                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <img class="card-image" src="images/halt-icon.svg" alt="">
                     <h2>You should probably wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>When you apply, you will need to have been present in the U.S. for at least half of the previous <span class="time-period">5</span> years.</p>
@@ -217,7 +225,10 @@
                 </div>
 
                 <div id="continuous-residence" class="card">
-                    <h2 data-counter="5" style="--counter-circle-top: -1rem; --counter-circle-left: -0.25rem;">In the last <span class="time-period">5</span> years, has <em>any single trip</em><br class="desktop-only"/> outside the U.S. been longer than 6 months?</h2>
+                    <h2 data-counter="5" style="--counter-circle-top: -1rem; --counter-circle-left: -0.25rem;">
+                        <span class="hide-for-early-filing-period">In the last <span class="time-period">5</span> years,</span> 
+                        <span class="show-for-early-filing-period">Since <span class="resident-since-date-formatted"></span>,</span>
+                        has <em>any single trip</em><br class="desktop-only"/> outside the U.S. been longer than 6 months?</h2>
                     <div class="boolean-group">
                         <a href="#endpoint-success" class="button boolean">No</a>
                         <a href="#continuous-residence-ineligible" class="button boolean">Yes</a>
@@ -228,7 +239,7 @@
                     </picture>
                 </div>
                 <div id="continuous-residence-ineligible" class="card endpoint-ineligible">
-                    <img class="card-image" src="images/ineligible-x.svg" alt="">
+                    <img class="card-image" src="images/halt-icon.svg" alt="">
                     <h2>You should probably wait to apply.</h2>
                     <div class="endpoint-content">
                         <p>Trips longer than 6 months can cause problems when you apply for U.S. citizenship.</p>
