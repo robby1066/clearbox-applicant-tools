@@ -90,6 +90,9 @@ class NavigationManager {
         const dateInput = document.getElementById('resident-since-date');
         const continueButton = dateInput.parentElement.nextElementSibling;
 
+        // Set the max value of the input to the current date.
+        dateInput.setAttribute('max', new Date().toISOString().split('T')[0]);
+
         dateInput.addEventListener('change', () => {
             continueButton.classList.remove('disabled');
             this.updateResidentSinceInfo();
@@ -103,8 +106,10 @@ class NavigationManager {
         const residentSinceCard = document.getElementById('resident-since-info');
         const selectedDate = new Date(dateInput.value);
         const today = new Date();
-        const eligiblityDate = new Date(selectedDate.getFullYear() + this.provision_years, selectedDate.getMonth(), selectedDate.getDate());
+        const eligiblityDate = new Date(selectedDate.getFullYear() + this.provision_years, selectedDate.getMonth(), selectedDate.getDate() + 1);
+        const fileDate = new Date(eligiblityDate.getFullYear(), eligiblityDate.getMonth(), eligiblityDate.getDate() - 89);
         const eligiblityDateDisplay = document.getElementById('eligiblity-date');
+        const fileDateDisplay = document.querySelectorAll('.file-date');
         const yearsDiff = (today - selectedDate) / (365 * 24 * 60 * 60 * 1000);
 
         dateDisplay.textContent = yearsDiff.toFixed(1);
@@ -112,6 +117,7 @@ class NavigationManager {
             residentSinceCard.classList.add('ineligible');
             this.canvas.classList.remove('within-early-filing-period');
             eligiblityDateDisplay.textContent = eligiblityDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            fileDateDisplay.forEach(el => el.textContent = fileDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
         } else {
             if (this.isWithinEarlyFilingPeriod()) {
                 residentSinceDateFormatted.forEach(el => el.textContent = selectedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
@@ -135,8 +141,6 @@ class NavigationManager {
     updateTimePeriod() {
         const timePeriodElements = document.querySelectorAll('.time-period');
         const physicalPresenceDays = document.getElementById('physical-presence-days');
-        // const yearsAgo = parseFloat(document.getElementById('resident-since-date-display').textContent);
-        // const timePeriod = yearsAgo < 3 ? 5 : 3;
         timePeriodElements.forEach(el => el.textContent = this.provision_years);
         physicalPresenceDays.textContent = this.provision_years === 3 ? 548 : 913;
     }
